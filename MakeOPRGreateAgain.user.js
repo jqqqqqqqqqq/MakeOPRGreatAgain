@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MakeOPRGreateAgain
-// @version      0.31
+// @version      0.40
 // @description  Make OPR Great Again! Add some fancy displays to your profile based on information already in it.
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
@@ -105,23 +105,23 @@ function addInfo(tooltip, name, value) {
 
         //addInfo("已经过了的 po 占所有 po 的比例", "通过率", created_p);
         //addInfo("已经拒了的 po 占所有 po 的比例", "拒绝率", rejected_p);
-        addInfo("状态未知的 po 占所有 po 的比例", "未结算：", remaining + " (" + remaining_p + ")");
+        addInfo("等待结算和判断错误的 po 占所有 po 的比例", "未结算（未计数）：", remaining + " (" + remaining_p + ")");
 
         sum = created + rejected;
         if(sum < 100) {
             addInfo("下一个要获得的成就", "下一个成就：", sum + "/100 (" + (sum / 100).toPercent() + ") " + image_bronze);
         } else if(sum < 750) {
             //addInfo("现在已经获得的成就", "当前成就：", image_bronze);
-            addInfo("下一个要获得的成就", "下一个成就：", image_bronze + "== " + sum + "/750 (" + (sum / 750).toPercent() + ") " + " =>" + image_silver);
+            addInfo("下一个要获得的成就", "下一个成就：", image_bronze + "== " + sum + "/750 (" + (sum / 750).toPercent() + ") " + " -->" + image_silver);
         } else if(sum < 2500) {
             //addInfo("现在已经获得的成就", "当前成就：", image_silver);
-            addInfo("下一个要获得的成就", "下一个成就：", image_silver + "== " + sum + "/2500 (" + (sum / 2500).toPercent() + ") " + " =>" + image_gold);
+            addInfo("下一个要获得的成就", "下一个成就：", image_silver + "== " + sum + "/2500 (" + (sum / 2500).toPercent() + ") " + " -->" + image_gold);
         } else if(sum < 5000) {
             //addInfo("现在已经获得的成就", "当前成就：", image_gold);
-            addInfo("下一个要获得的成就", "下一个成就：", image_gold + "== " + sum + "/5000 (" + (sum / 5000).toPercent() + ") " + " =>" + image_titanium);
+            addInfo("下一个要获得的成就", "下一个成就：", image_gold + "== " + sum + "/5000 (" + (sum / 5000).toPercent() + ") " + " -->" + image_titanium);
         } else if(sum < 10000) {
             //addInfo("现在已经获得的成就", "当前成就：", image_titanium);
-            addInfo("下一个要获得的成就", "下一个成就：", image_titanium + "== " + sum + "/10000 (" + (sum / 10000).toPercent() + ") " + " =>" + image_obsidian);
+            addInfo("下一个要获得的成就", "下一个成就：", image_titanium + "== " + sum + "/10000 (" + (sum / 10000).toPercent() + ") " + " -->" + image_obsidian);
         } else{
             addInfo("现在已经获得的成就", "当前成就：", image_obsidian);
         }
