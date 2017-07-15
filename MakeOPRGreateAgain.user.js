@@ -2,8 +2,8 @@
 // @name         MakeOPRGreateAgain
 // @version      0.2
 // @description  Make OPR Great Again! Add some fancy displays to your profile based on information already in it.
-// @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreateAgain/raw/master/MakeOPRGreateAgain.user.js
-// @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreateAgain/raw/master/MakeOPRGreateAgain.user.js
+// @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
+// @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
 // @author       jqqqqqqqqqq
 // @match        https://opr.ingress.com/recon
 // @require      https://code.jquery.com/jquery-3.2.1.min.js
