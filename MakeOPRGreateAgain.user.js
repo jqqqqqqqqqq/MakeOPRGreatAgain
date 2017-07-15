@@ -87,7 +87,7 @@ function addInfo(tooltip, name, value) {
         //console.log(document.querySelector("body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-collapse.navbar-responsive-collapse.in.collapse > ul > div > div > p:nth-child(4) > span.gold.pull-right").innerHTML);
 
         $("div[id=player_stats] > div > p:nth-child(4) > span.gold.pull-right").each(function(index, element){
-            element.innerHTML += "(" + remaining_p +")";
+            element.innerHTML += "(状态未知：" + remaining_p +")";
         });
         $("div[id=player_stats] > div > p:nth-child(6) > span.gold.pull-right").each(function(index, element){
             element.innerHTML += "(" + created_p +")";
