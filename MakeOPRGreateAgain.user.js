@@ -86,9 +86,9 @@ function addInfo(tooltip, name, value) {
         var remaining_p = (remaining / total).toPercent();
         //console.log(document.querySelector("body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-collapse.navbar-responsive-collapse.in.collapse > ul > div > div > p:nth-child(4) > span.gold.pull-right").innerHTML);
 
-        $("div[id=player_stats] > div > p:nth-child(4) > span.gold.pull-right").each(function(index, element){
-            element.innerHTML += "(状态未知：" + remaining_p +")";
-        });
+        //$("div[id=player_stats] > div > p:nth-child(4) > span.gold.pull-right").each(function(index, element){
+        //    element.innerHTML += "(状态未知：" + remaining_p +")";
+        //});
         $("div[id=player_stats] > div > p:nth-child(6) > span.gold.pull-right").each(function(index, element){
             element.innerHTML += "(" + created_p +")";
         });
@@ -105,7 +105,7 @@ function addInfo(tooltip, name, value) {
 
         //addInfo("已经过了的 po 占所有 po 的比例", "通过率", created_p);
         //addInfo("已经拒了的 po 占所有 po 的比例", "拒绝率", rejected_p);
-        //addInfo("状态未知的 po 占所有 po 的比例", "见鬼率", remaining_p);
+        addInfo("状态未知的 po 占所有 po 的比例", "未结算", remaining + " (" + remaining_p + ")");
 
         sum = created + rejected;
         if(sum < 100) {
