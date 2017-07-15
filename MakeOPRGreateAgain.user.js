@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MakeOPRGreateAgain
-// @version      0.3
+// @version      0.30
 // @description  Make OPR Great Again! Add some fancy displays to your profile based on information already in it.
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
