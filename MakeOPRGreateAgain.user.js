@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MakeOPRGreateAgain
-// @version      0.22
+// @version      0.3
 // @description  Make OPR Great Again! Add some fancy displays to your profile based on information already in it.
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
@@ -112,16 +112,16 @@ function addInfo(tooltip, name, value) {
             addInfo("下一个要获得的成就", "下一个成就：", sum + "/100 (" + (sum / 100).toPercent() + ") " + image_bronze);
         } else if(sum < 750) {
             //addInfo("现在已经获得的成就", "当前成就：", image_bronze);
-            addInfo("下一个要获得的成就", "下一个成就：", sum + "/750 (" + (sum / 750).toPercent() + ") " + image_bronze + "→" + image_silver);
+            addInfo("下一个要获得的成就", "下一个成就：", image_bronze + "== " + sum + "/750 (" + (sum / 750).toPercent() + ") " + " =>" + image_silver);
         } else if(sum < 2500) {
             //addInfo("现在已经获得的成就", "当前成就：", image_silver);
-            addInfo("下一个要获得的成就", "下一个成就：", sum + "/2500 (" + (sum / 2500).toPercent() + ") " + image_silver + "→" + image_gold);
+            addInfo("下一个要获得的成就", "下一个成就：", image_silver + "== " + sum + "/2500 (" + (sum / 2500).toPercent() + ") " + " =>" + image_gold);
         } else if(sum < 5000) {
             //addInfo("现在已经获得的成就", "当前成就：", image_gold);
-            addInfo("下一个要获得的成就", "下一个成就：", sum + "/5000 (" + (sum / 5000).toPercent() + ") " + image_gold + "→" + image_titanium);
+            addInfo("下一个要获得的成就", "下一个成就：", image_gold + "== " + sum + "/5000 (" + (sum / 5000).toPercent() + ") " + " =>" + image_titanium);
         } else if(sum < 10000) {
             //addInfo("现在已经获得的成就", "当前成就：", image_titanium);
-            addInfo("下一个要获得的成就", "下一个成就：", sum + "/10000 (" + (sum / 10000).toPercent() + ") " + image_titanium + "→"+ image_obsidian);
+            addInfo("下一个要获得的成就", "下一个成就：", image_titanium + "== " + sum + "/10000 (" + (sum / 10000).toPercent() + ") " + " =>" + image_obsidian);
         } else{
             addInfo("现在已经获得的成就", "当前成就：", image_obsidian);
         }
