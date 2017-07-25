@@ -1,13 +1,11 @@
 // ==UserScript==
 // @name         MakeOPRGreateAgain
-// @version      0.44
+// @version      0.45
 // @description  Make OPR Great Again! Add some fancy displays to your profile based on information already in it.
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
 // @author       jqqqqqqqqqq
-// @match        https://opr.ingress.com/recon
-// @match        https://opr.ingress.com/
-// @match        https://opr.ingress.com/?login=true*
+// @match        https://opr.ingress.com/*
 // @require      https://code.jquery.com/jquery-3.2.1.min.js
 // @grant        none
 // ==/UserScript==
@@ -107,7 +105,7 @@ function addInfo(tooltip, name, value) {
 
         //addInfo("已经过了的 po 占所有 po 的比例", "通过率", created_p);
         //addInfo("已经拒了的 po 占所有 po 的比例", "拒绝率", rejected_p);
-        addInfo("等待结算和判断错误的 po 占所有 po 的比例", "未结算（未计数）：", remaining + " (" + remaining_p + ")");
+        addInfo("等待结算和dupe、错误的 po", "未结算（未计数）：", remaining + " (" + remaining_p + ")");
 
         sum = created + rejected;
         if(sum < 100) {
