@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         OPR Notification
-// @version      0.3
+// @version      0.4
 // @description  pull latest info every 10 seconds, if recon is available, send a web notification.
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js
