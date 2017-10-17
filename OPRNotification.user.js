@@ -35,7 +35,6 @@ function rnd(start, end){
                 items = response.data;
                 console.log(items.code);
                 if(items.code == "OK"){
-                    clearInterval(interval);
                     if(first_try)
                         return;
                     Notification.requestPermission( function(status) {
