@@ -34,7 +34,7 @@
 
 使用教程
 -------------
-首先，浏览器安装了tampermonkey之类的userjs插件，然后点击(这里)[https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js]安装
+首先，浏览器安装了tampermonkey之类的userjs插件，然后点击[这里](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js)安装
 
 不想用默认评分？
 -------------
@@ -51,4 +51,4 @@
 
 # OPRNotification
 
-直接(点此)[https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js]安装即可
+直接[点此](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js)安装即可
