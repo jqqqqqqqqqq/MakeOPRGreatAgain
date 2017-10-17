@@ -1,6 +1,10 @@
 # MakeOPRGreatAgain
 
-## 使用者说明
+作者不会前端，所以代码质量较低，欢迎前端大神帮忙提升代码质量！
+
+整个系列欢迎push request!
+
+## 使用说明
 
 ### 安装
 
@@ -34,7 +38,7 @@
 
 使用教程
 -------------
-首先，浏览器安装了tampermonkey之类的userjs插件，然后点击[这里](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js)安装
+点击[这里](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js)安装
 
 不想用默认评分？
 -------------
@@ -42,13 +46,16 @@
 
 照着这个写，别忘了后面的逗号，在源代码上直接改就行
 
+```
 {button:"553355", total:5, name:3, history:3, unique:3, location:5, safety:5},
 
-↑按钮名称          ↑总分     ↑名字    ↑历史      ↑独一无二   ↑位置       ↑安全
-
+// ↑按钮名称        ↑总分     ↑名字     ↑历史     ↑独一无二   ↑位置       ↑安全
+```
 插入/替换到buttons那个list里即可
 
 
 # OPRNotification
 
 直接[点此](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js)安装即可
+
+默认10秒检查一次
