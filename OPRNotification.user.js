@@ -48,36 +48,9 @@ function rnd(start, end){
                     });
                 }
                 first_try = false;
+                timeout=rnd(20,60)*1000;
+                flip=setTimeout(timeoutFun,timeout);
             });
-            
-            timeout=rnd(20,60)*1000;
-            flip=setTimeout(timeoutFun,timeout);
         },timeout);
-/*        
-        var interval=self.setInterval(function(){
-            rd=rnd(20,60);
-            if(rnd==1)
-                return;
-            var SUBMISSION_URL = "/api/v1/vault/review";
-            var items = {};
-            $http.get(SUBMISSION_URL).then(function(response) {
-                items = response.data;
-                console.log(items.code);
-                if(items.code == "OK"){
-                    clearInterval(interval);
-                    if(first_try)
-                        return;
-                    Notification.requestPermission( function(status) {
-                        console.log(status); // 仅当值为 "granted" 时显示通知
-                        var new_portal = new Notification("New portals available！",{// 显示通知
-                            body: 'Come on! Let\'s continue.',
-                            icon:"/img/great.png"
-                        });
-                        location.href="/"; //有po就去主页
-                    });
-                }
-                first_try = false;
-            });},30000);
-*/
     });
 })();
