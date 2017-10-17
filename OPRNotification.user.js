@@ -28,7 +28,7 @@
             $http.get(SUBMISSION_URL).then(function(response) {
                 items = response.data;
                 console.log(items.code);
-                if(items.code != "ERROR"){
+                if(items.code == "OK"){
                     clearInterval(interval);
                     if(first_try)
                         return;
@@ -38,6 +38,7 @@
                             body: 'Come on! Let\'s continue.',
                             icon:"/img/great.png"
                         });
+                        location.href="/recon";
                     });
                 }
                 first_try = false;
