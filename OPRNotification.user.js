@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         OPR Notification
-// @version      0.1
+// @version      0.2
 // @description  pull latest info every 10 seconds, if recon is available, send a web notification.
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js
@@ -38,7 +38,7 @@
                             body: 'Come on! Let\'s continue.',
                             icon:"/img/great.png"
                         });
-                        location.href="/recon";
+                        location.href="/"; //有po就去主页
                     });
                 }
                 first_try = false;
