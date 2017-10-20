@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         OPR Notification
-// @version      0.5
+// @version      0.6
 // @description  pull latest info every 10 seconds, if recon is available, send a web notification.
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js
@@ -22,12 +22,12 @@ function rnd(start, end){
 
 (function() {
     Notification.requestPermission();
-    console.log("OPR Notification running...");
     var injector = angular.injector(['ng']);
     injector.invoke(function($http){
         var first_try = true;
         var flip = 0;
-        var timeout=rnd(20,60)*1000;
+        var timeout=rnd(20,60);
+        console.log("OPR Notification running. First update will occur in " + timeout + " seconds.");
         flip=setTimeout(function timeoutFun(){
             var SUBMISSION_URL = "/api/v1/vault/review";
             var items = {};
@@ -35,7 +35,7 @@ function rnd(start, end){
                 items = response.data;
                 if(items.code == "ERROR"){
                     timeout=rnd(20,60);
-                    console.log("No portal available, retry in " + timeout + "seconds");
+                    console.log("No portal available, retry in " + timeout + " seconds.");
                     flip=setTimeout(timeoutFun,timeout*1000);
                 }
                 
@@ -53,6 +53,6 @@ function rnd(start, end){
                 }
                 first_try = false;
             });
-        },timeout);
+        },timeout*1000);
     });
 })();
