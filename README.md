@@ -46,8 +46,6 @@
 
 ## 安装
 
--------------
-
 点击[这里](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js)安装
 
 ## 使用
@@ -55,8 +53,6 @@
 鼠标。
 
 ## 不想用默认评分？
-
--------------
 
 很容易。
 
