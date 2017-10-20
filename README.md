@@ -1,5 +1,7 @@
 # MakeOPRGreatAgain
 
+![MakeOPRGreatAgain](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/MakeOPRGreatAgain.png)
+
 ## 写在前面
 
 作者不会前端，所以代码质量较低，欢迎前端大神帮忙提升代码质量！
@@ -37,6 +39,9 @@
 展开右上角即可查看更多信息，所有信息均来源于页面已有数据。
 
 # 5StarOneKey
+
+![5StarOneKey](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/5StarOneKey.png)
+
 已经更新到自定义打分版本，名字已经出现偏差啦，但是叫着顺口懒得改了
 
 ## 安装
@@ -66,6 +71,10 @@
 
 
 # OPRNotification
+
+![OPRNotification1](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/OPRNotification1.jpg)
+
+![OPRNotification1](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/OPRNotification2.jpg)
 
 ## 安装
 
