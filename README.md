@@ -56,6 +56,10 @@
 
 # OPRNotification
 
+## 安装
+
 直接[点此](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js)安装即可
 
-默认10秒检查一次
+## 使用说明
+
+默认20-60秒检查一次。请将页面保留在“当前无 po 可审”，即 opr.ingress.com/recon，否则插件不会启动。
