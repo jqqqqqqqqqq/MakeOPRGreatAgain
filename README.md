@@ -1,12 +1,14 @@
+# Something to mention 写在前面
+
+The author knows nothing about frontend, so push requests are welcome in order to improve code quality!
+
+作者不会前端，所以代码质量较低，欢迎前端大神帮忙提升代码质量！整个系列欢迎push request!
+
+Scroll down for English version.
+
 # MakeOPRGreatAgain
 
 ![MakeOPRGreatAgain](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/MakeOPRGreatAgain.png)
-
-## 写在前面
-
-作者不会前端，所以代码质量较低，欢迎前端大神帮忙提升代码质量！
-
-整个系列欢迎push request!
 
 ## 安装
 
@@ -79,3 +81,85 @@
 ## 使用
 
 默认20-60秒检查一次。请将页面保留在“当前无 po 可审”，即 opr.ingress.com/recon，否则插件不会启动。
+
+
+
+------------------
+
+
+
+# MakeOPRGreatAgain
+
+![MakeOPRGreatAgain](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/MakeOPRGreatAgain.png)
+
+## Installation
+
+These plugins are compatible with browsers that runs user.js include but not limit to ``Firefox`` and ``Chrome``.
+
+Only ``Chrome`` and ``Safari`` tested, and please use ``Chrome`` to gain best experience.
+
+### Chrome
+
+[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) is required.
+
+After installing Tampermonkey, click [Download](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js), and then follow the installation instructions.
+
+### Firefox
+[Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) is required. 
+
+After installing Greasemonkey, click [Download](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js), and then follow the installation instructions.
+
+### Other Browsers
+
+Please refer Google
+
+### Automatic Update
+
+In most case, plugin will update automatically. If an error occurs, follow steps below to perform a manual update:
+
+#### Chrome & Tampermonkey
+
+Open ``Tampermonkey``, click the time section on the user.js, and wait for its update.
+
+#### Firefox & Greasemonkey
+
+Open ``Greasemonkey``... I don't use Greasemonkey, so you can Google for it.
+
+## Usage
+
+All the content will appear right below the original info at top right.
+
+# 5StarOneKey
+
+![5StarOneKey](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/5StarOneKey.png)
+
+## Installation
+
+Click [Here](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js) to install.
+
+## Usage
+
+Your mouse.
+
+## Wanna customize？
+
+Change the numbers below, and append it to the list in the user.js.
+
+```
+{button:"553355", total:5, name:3, history:3, unique:3, location:5, safety:5},
+```
+
+
+# OPRNotification
+
+![OPRNotification1](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/OPRNotification1.jpg)
+
+![OPRNotification1](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/OPRNotification2.jpg)
+
+## Installation
+
+Click [Here](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js) to install.
+
+## Usage
+
+This script runs every 20-60 second randomly, please leave your browser at opr.ingress.com/recon, or else the script won't run.
