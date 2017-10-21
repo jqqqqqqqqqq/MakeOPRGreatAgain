@@ -36,6 +36,14 @@ function localization(){
             ACHIEVEMENT_TIP = "现在已经获得的成就";
             ACHIEVEMENT_TAG = "当前成就：";
             break;
+        case "ja":
+            ERROR_TIP = "結果が出ていない、重複した、およびまちがっていたポータル";
+            ERROR_TAG = "計算されていないポータル：";
+            NEXT_ACHIEVEMENT_TIP = "次の目標は";
+            NEXT_ACHIEVEMENT_TAG = "次の目標まで：";
+            ACHIEVEMENT_TIP = "既に手に入れたメダル";
+            ACHIEVEMENT_TAG = "今の成績：";
+            break;
     }
 }
 
