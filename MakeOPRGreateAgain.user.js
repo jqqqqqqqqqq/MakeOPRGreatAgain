@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MakeOPRGreateAgain
-// @version      0.45
+// @version      0.46
 // @description  Make OPR Great Again! Add some fancy displays to your profile based on information already in it.
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
@@ -18,18 +18,35 @@ image_gold = "<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAbC
 image_titanium = "<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAbCAYAAABm409WAAAAAXNSR0IArs4c6QAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAI2GlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgICAgICAgICAgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iCiAgICAgICAgICAgIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiCiAgICAgICAgICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgICAgICAgICAgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIj4KICAgICAgICAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICAgICAgICAgPHRpZmY6Q29tcHJlc3Npb24+MTwvdGlmZjpDb21wcmVzc2lvbj4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHRpZmY6UGhvdG9tZXRyaWNJbnRlcnByZXRhdGlvbj4yPC90aWZmOlBob3RvbWV0cmljSW50ZXJwcmV0YXRpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj4xNDI8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpDb2xvclNwYWNlPjY1NTM1PC9leGlmOkNvbG9yU3BhY2U+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj4xNjE8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3BuZzwvZGM6Zm9ybWF0PgogICAgICAgICA8eG1wTU06T3JpZ2luYWxEb2N1bWVudElEPnhtcC5kaWQ6MDFkOTQxNzUtNzkwMi00NjExLTg1ZmUtMDdiYzM5MjcwYjJmPC94bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpIaXN0b3J5PgogICAgICAgICAgICA8cmRmOlNlcT4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE3IChNYWNpbnRvc2gpPC9zdEV2dDpzb2Z0d2FyZUFnZW50PgogICAgICAgICAgICAgICAgICA8c3RFdnQ6Y2hhbmdlZD4vPC9zdEV2dDpjaGFuZ2VkPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6d2hlbj4yMDE3LTA3LTE2VDAwOjMyOjUxKzA4OjAwPC9zdEV2dDp3aGVuPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6aW5zdGFuY2VJRD54bXAuaWlkOjAxZDk0MTc1LTc5MDItNDYxMS04NWZlLTA3YmMzOTI3MGIyZjwvc3RFdnQ6aW5zdGFuY2VJRD4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OmFjdGlvbj5zYXZlZDwvc3RFdnQ6YWN0aW9uPgogICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgPC9yZGY6U2VxPgogICAgICAgICA8L3htcE1NOkhpc3Rvcnk+CiAgICAgICAgIDx4bXBNTTpJbnN0YW5jZUlEPnhtcC5paWQ6MDFkOTQxNzUtNzkwMi00NjExLTg1ZmUtMDdiYzM5MjcwYjJmPC94bXBNTTpJbnN0YW5jZUlEPgogICAgICAgICA8eG1wTU06RG9jdW1lbnRJRD54bXAuZGlkOjAxZDk0MTc1LTc5MDItNDYxMS04NWZlLTA3YmMzOTI3MGIyZjwveG1wTU06RG9jdW1lbnRJRD4KICAgICAgICAgPHhtcDpDcmVhdGVEYXRlPjIwMTctMDctMTZUMDA6MzA6MzYrMDg6MDA8L3htcDpDcmVhdGVEYXRlPgogICAgICAgICA8eG1wOk1ldGFkYXRhRGF0ZT4yMDE3LTA3LTE2VDAwOjMyOjUxKzA4OjAwPC94bXA6TWV0YWRhdGFEYXRlPgogICAgICAgICA8eG1wOk1vZGlmeURhdGU+MjAxNy0wNy0xNlQwMDozMjo1MSswODowMDwveG1wOk1vZGlmeURhdGU+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+QWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCk8L3htcDpDcmVhdG9yVG9vbD4KICAgICAgICAgPHBob3Rvc2hvcDpDb2xvck1vZGU+MzwvcGhvdG9zaG9wOkNvbG9yTW9kZT4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CjrEE/MAAAelSURBVEgNdVZpbFTXFf7uu+/Ne7MPsxhDDIxXNhtImkJpWtWouElqdYma0CpCFekCadUG+EFbhRRB+qOhakmDFKk0Cv0RUVKrixAO7Q9qsEgwFBoSVMCxxwTGyzBeZsae7e2v501wBWn7Rlf3vnn3nu37zjkX+P8P2759uzT/+dixYwve/P2bh48fO/67o0ePLpn//8iRI5LjOGz+/ePz//zQ09PDt2zZYtNmxz1w8ODBZ03T2ptMJhu8XgW6YRRMy/pFamjo5f3796vuHppFGqa7vve5TwFZIpw9e1bYtGlTbeOhVw49ViyVDzAI68dH0xgdv21EgkGse+hhqaW5DbqmDZqmuX/r1q1/qAl9CrznqR6Qcda8kpoC10USzOcFkwerxjLpA8Vi8cm52SKuXbtuFWaycJjIbV0FMw2r45OPOBs3bhRjsRgyd+70TWaze8mDC67gzs5OkYZN7zY7c+aMOC/48OHDiWh8wR6P5Pnh6Hha6es77eSmpi3GOA8E/CwkO+ACkK84GL+TRTQSN1tb21g8UcclUYTkkV5XIpEXf7JzZ9pV5Mqe90A4efLks1W1vFeWpcWpVAp9f+8zspNZMRwKMU67bhUM7PxCDEGvg0MnZpCIyKioKmZn847IFXPFilVSY1MTBC7kFUX+5b4X9v2KdGist7d3k6ZpL0uStDadvoWL/xgwrl69yoPBoODxeCAwBg+zMVq0sWtzBAE/8NKJHBIBEaYjwLIsmIaDYrFk+31eq6W1VWpua8WqlSsHFY+8R9BNc5+iKGtPnz6t7dr9nPXGseMSASeI5DL9DyYwWOSBx+uFbdswCT6R1ox+jmNDkT2QJYZgwCdAEKQTf/yzdXNkxGh4oGFFtVr9izg5M1PKpNOg+Atty1vcWMPv94FoidxMDuFwiKwOoFKsQvZwKKTYL1bh8wXBdM1lEryk0OtjKJerWLmmnb/df45/6YvdJpFHFNRqVSiVSggR/QTGawI558hkJqD4vNB0HWO0DnMLd2Z1pGfKiHAVhUIBrpfBUAi5uRJsy0Y4FLjrpQnLtkXGGOFDwtyNFBaKpwM37uVSGbFYnACcRaWsQrMM1PkZrtwkq7lEFiuYrpQwW5ilsxKCZAhFD5yLhKtNkarlJ4WQiO3SiRY1ze5MYEOm2MeJ3zeJTXWxBJYsW0rnDBplkEUQJT9aIoswM5NHbjqHukSiZggnQx36CURlsr5GAIGAI7kfCXZBdD0QRQ4mEa+9MjIzGbKMQCQrPSRAYGQdfec0KqU5miWXmjUyiBLhzASoVZ0iYtT2CH5fgDFSWSQcGLnGRZkEyvB5JBi0XiSVIagTxCSaSZgoecBNDU4lh5BMQiQOicLGBDKKhiCQEXT+4sULGJ0Yg1hfXwe1XISP6KYZNnyKDNHSkNMYNizxEbj1GJmcxiJ/HNxLIMKCSArSmTSWLgwhyRWMmi67BCi0tgjsEIGdpUy3id4CBYg4LiMQjkDmwKxqUFLp+OoqBz/uVrAmGUCB6FgpjMMTiMAfiiGXn4ZlziHh4+j+hA+b26owbRNlOiuQIsO24CGDJTdRXZBt+kO0KUQeGVH9Jl56vIqutjIuZOP46w0LkqHh3OVryExlMJXLoe/tf2GuaOD9CR1XxiNojALfXF9BQpyAI5qEoV1LRFd2rRgJ1C9Cfo5BOvRcA7lJLh/oLWPO9KIhuQ7ygiYM5S/j3PkLkAloLvvxwPJPIZaI4spYHlc+LOPzrTKWxG2cvwl4ZRkqJaBF1CeHKCeIWhP5Eh5uWYbf9N3BdduL73dtQJSoNjR8G/G6KL725ccxOPgBHdSxpmM15UARw0MpNCYXE9BJHD1/g7BREfIIGL49iU9v7LTCwTD417d843uBoG9ZbmZOP9v/Dl/SsJAt89hIfThKuETR2NSIaqWCyckpKmrUhxxOsa7WuN7c3Iy5uQr1ixtQBINKRRmT+by9uetRk1qAGAgEBf7MM9uK+dn8I9HoguiixYtZajhl3BhKC8FglA1ev04lIY+lS5eivr6erFeJpgKampJw6/+lS5dwrn+AiqKMYrnitLV1mE888aS4fsMGrlbVrFbVniciAVSyFwzfGtmjq+rualVV3n/3Cv721imTUWZFIzFoxI4HH2pHe8cqslzAjeuDuDBwGbF4DBUqGdRSze9899t8dXs7M3SDQm/+dnp6+me7d+/OsP33NOs3enqWT2Wz+0xdf7pAbBkZTlmpkRTefe+ffGGiDn5fGDaVaMNQqZr6qCBmrZUrVziPdT8qtnd0uJX1Laq6L9Bt5D3X8Ps6GsXMbfi1Zv/r117rivt9ByLh8MaxsVGcf+e8cerUKa5WdKFuYQKTU2P2soZG67ObOqXm1lZ4FWUoEAk8v+3pbX9yBbu3End2m38tRO6L+9y9rril0L2yoPdU77d0Xf+pJHqSHwwOYmBgwBxN30ayuUVc9+Ba6g9SwRcM/nzz57a/0trKNDriRoTT+M/15T4FrlD3ufciQOtIpVL5kaapu6ice8uVKnKzecpY9vrqNSte7PpMV63BuxewHTt2uII/qtU1SaTx7vxfE1XY+64y/f39jdRkXqWNUUrVH3ylu/uye8jFkKbaFcV9//jzbzTqjHFS0w1mAAAAAElFTkSuQmCC\">";
 image_obsidian = "<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAbCAYAAABm409WAAAAAXNSR0IArs4c6QAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAI2GlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgICAgICAgICAgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iCiAgICAgICAgICAgIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiCiAgICAgICAgICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgICAgICAgICAgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIj4KICAgICAgICAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICAgICAgICAgPHRpZmY6Q29tcHJlc3Npb24+MTwvdGlmZjpDb21wcmVzc2lvbj4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHRpZmY6UGhvdG9tZXRyaWNJbnRlcnByZXRhdGlvbj4yPC90aWZmOlBob3RvbWV0cmljSW50ZXJwcmV0YXRpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj4xNDI8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpDb2xvclNwYWNlPjY1NTM1PC9leGlmOkNvbG9yU3BhY2U+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj4xNjE8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3BuZzwvZGM6Zm9ybWF0PgogICAgICAgICA8eG1wTU06T3JpZ2luYWxEb2N1bWVudElEPnhtcC5kaWQ6NGM0OWM3YTMtN2M0Zi00NTlmLWJiOGUtZmRlNjVhOTQyNmYzPC94bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpIaXN0b3J5PgogICAgICAgICAgICA8cmRmOlNlcT4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE3IChNYWNpbnRvc2gpPC9zdEV2dDpzb2Z0d2FyZUFnZW50PgogICAgICAgICAgICAgICAgICA8c3RFdnQ6Y2hhbmdlZD4vPC9zdEV2dDpjaGFuZ2VkPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6d2hlbj4yMDE3LTA3LTE2VDAwOjMzOjA2KzA4OjAwPC9zdEV2dDp3aGVuPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6aW5zdGFuY2VJRD54bXAuaWlkOjRjNDljN2EzLTdjNGYtNDU5Zi1iYjhlLWZkZTY1YTk0MjZmMzwvc3RFdnQ6aW5zdGFuY2VJRD4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OmFjdGlvbj5zYXZlZDwvc3RFdnQ6YWN0aW9uPgogICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgPC9yZGY6U2VxPgogICAgICAgICA8L3htcE1NOkhp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\">";
 
+var ERROR_TIP = "Error rates and pending rates";
+var ERROR_TAG = "Pending: ";
+var NEXT_ACHIEVEMENT_TIP = "Next achievement you will acquire";
+var NEXT_ACHIEVEMENT_TAG = "Next badge：";
+var ACHIEVEMENT_TIP = "Current achievement";
+var ACHIEVEMENT_TAG = "Badge: ";
+
+function localization(){
+    var locale = $("html").attr("lang");
+    switch(locale){
+        case "zh_CN":
+            ERROR_TIP = "等待结算和dup、错误的 po";
+            ERROR_TAG = "未结算（未计数）：";
+            NEXT_ACHIEVEMENT_TIP = "下一个要获得的成就，仅供参考";
+            NEXT_ACHIEVEMENT_TAG = "下一个成就：";
+            ACHIEVEMENT_TIP = "现在已经获得的成就";
+            ACHIEVEMENT_TAG = "当前成就：";
+            break;
+    }
+}
+
 function addInfo(tooltip, name, value) {
     var p1 = document.createElement("p");
     var br1 = document.createElement("br");
-    p1.innerHTML = "<span id=\"achievement1" + calltimes + "\" style=\"margin-left: 15px\" class=\"glyphicon glyphicon-info-sign ingress-gray pull-left\" uib-tooltip-trigger=\"outsideclick\" uib-tooltip-placement=\"left\" tooltip-class=\"goldBorder\" uib-tooltip=\"" + tooltip + "\"></span>\
-<span style=\"margin-left: 5px\" class=\"ingress-mid-blue pull-left\">" + name + "</span>\
-<span class=\"gold pull-right\">" + value + "</span>";
+    p1.innerHTML = "<span id=\"achievement1" + calltimes + "\" style=\"margin-left: 15px\" class=\"glyphicon glyphicon-info-sign ingress-gray pull-left\" uib-tooltip-trigger=\"outsideclick\" uib-tooltip-placement=\"left\" tooltip-class=\"goldBorder\" uib-tooltip=\"" + tooltip + "\"></span><span style=\"margin-left: 5px\" class=\"ingress-mid-blue pull-left\">" + name + "</span><span class=\"gold pull-right\">" + value + "</span>";
 
     var p2 = document.createElement("p");
     var br2 = document.createElement("br");
-    p2.innerHTML = "<span id=\"achievement2" + calltimes + "\" class=\"glyphicon glyphicon-info-sign ingress-gray pull-left\" uib-tooltip-trigger=\"outsideclick\" uib-tooltip-placement=\"left\" tooltip-class=\"goldBorder\" uib-tooltip=\"" + tooltip + "\"></span>\
-<span style=\"margin-left: 5px\" class=\"ingress-mid-blue pull-left\">" + name + "</span>\
-<span class=\"gold pull-right\">" + value + "</span>";
+    p2.innerHTML = "<span id=\"achievement2" + calltimes + "\" class=\"glyphicon glyphicon-info-sign ingress-gray pull-left\" uib-tooltip-trigger=\"outsideclick\" uib-tooltip-placement=\"left\" tooltip-class=\"goldBorder\" uib-tooltip=\"" + tooltip + "\"></span><span style=\"margin-left: 5px\" class=\"ingress-mid-blue pull-left\">" + name + "</span><span class=\"gold pull-right\">" + value + "</span>";
     var mobile_version = document.querySelector("body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-collapse.navbar-responsive-collapse.collapse > ul > #player_stats > div");
     var desktop_version = document.querySelector("body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-collapse.navbar-responsive-collapse.collapse > div > #player_stats > div");
     mobile_version.appendChild(br1);
@@ -42,10 +59,7 @@ function addInfo(tooltip, name, value) {
     $(span1).mouseover(function(){
         var top = $(span1).position().top - 34;
         var left = $(span1).position().left - 90;
-        $("<div id=\"hover1" + _calltimes + "\" class=\"tooltip ng-isolate-scope top goldBorder fade in\" tooltip-animation-class=\"fade\" uib-tooltip-classes=\"\" ng-class=\"{ in: isOpen() }\" uib-tooltip-popup=\"\" uib-title=\"\" content=\"" + tooltip + "\" placement=\"top\" popup-class=\"goldBorder\" animation=\"animation\" is-open=\"isOpen\" origin-scope=\"origScope\" style=\"top: " + top + "px; left: " + left + "px;\">\
-<div class=\"tooltip-arrow\"></div>\
-<div class=\"tooltip-inner ng-binding\" ng-bind=\"content\">" + tooltip + "</div>\
-</div>").insertAfter(span1);
+        $("<div id=\"hover1" + _calltimes + "\" class=\"tooltip ng-isolate-scope top goldBorder fade in\" tooltip-animation-class=\"fade\" uib-tooltip-classes=\"\" ng-class=\"{ in: isOpen() }\" uib-tooltip-popup=\"\" uib-title=\"\" content=\"" + tooltip + "\" placement=\"top\" popup-class=\"goldBorder\" animation=\"animation\" is-open=\"isOpen\" origin-scope=\"origScope\" style=\"top: " + top + "px; left: " + left + "px;\"><div class=\"tooltip-arrow\"></div><div class=\"tooltip-inner ng-binding\" ng-bind=\"content\">" + tooltip + "</div></div>").insertAfter(span1);
         //$(hover1).addClass('in').removeClass('hide');
     });
     $(span1).mouseout(function(){
@@ -56,10 +70,7 @@ function addInfo(tooltip, name, value) {
     $(span2).mouseover(function(){
         var top = $(span2).position().top - 34;
         var left = $(span2).position().left - 90;
-        $("<div id=\"hover2" + _calltimes + "\" class=\"tooltip ng-isolate-scope top goldBorder fade in\" tooltip-animation-class=\"fade\" uib-tooltip-classes=\"\" ng-class=\"{ in: isOpen() }\" uib-tooltip-popup=\"\" uib-title=\"\" content=\"" + tooltip + "\" placement=\"top\" popup-class=\"goldBorder\" animation=\"animation\" is-open=\"isOpen\" origin-scope=\"origScope\" style=\"top: " + top + "px; left: " + left + "px;\">\
-<div class=\"tooltip-arrow\"></div>\
-<div class=\"tooltip-inner ng-binding\" ng-bind=\"content\">" + tooltip + "</div>\
-</div>").insertAfter(span2);
+        $("<div id=\"hover2" + _calltimes + "\" class=\"tooltip ng-isolate-scope top goldBorder fade in\" tooltip-animation-class=\"fade\" uib-tooltip-classes=\"\" ng-class=\"{ in: isOpen() }\" uib-tooltip-popup=\"\" uib-title=\"\" content=\"" + tooltip + "\" placement=\"top\" popup-class=\"goldBorder\" animation=\"animation\" is-open=\"isOpen\" origin-scope=\"origScope\" style=\"top: " + top + "px; left: " + left + "px;\"><div class=\"tooltip-arrow\"></div><div class=\"tooltip-inner ng-binding\" ng-bind=\"content\">" + tooltip + "</div></div>").insertAfter(span2);
         //$(hover2).addClass('in');
     });
     $(span2).mouseout(function(){
@@ -75,6 +86,7 @@ function addInfo(tooltip, name, value) {
         return (Math.round(this * 1000)/10).toFixed(1) + '%';
     };
 
+    localization();
     function main(){
         var total = parseInt(document.querySelector("#player_stats > div > p:nth-child(4) > span.gold.pull-right").innerHTML);
         var created = parseInt(document.querySelector("#player_stats > div > p:nth-child(6) > span.gold.pull-right").innerHTML);
@@ -84,47 +96,30 @@ function addInfo(tooltip, name, value) {
         var created_p = (created / total).toPercent();
         var rejected_p = (rejected / total).toPercent();
         var remaining_p = (remaining / total).toPercent();
-        //console.log(document.querySelector("body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-collapse.navbar-responsive-collapse.in.collapse > ul > div > div > p:nth-child(4) > span.gold.pull-right").innerHTML);
 
-        //$("div[id=player_stats] > div > p:nth-child(4) > span.gold.pull-right").each(function(index, element){
-        //    element.innerHTML += "(状态未知：" + remaining_p +")";
-        //});
         $("div[id=player_stats] > div > p:nth-child(6) > span.gold.pull-right").each(function(index, element){
             element.innerHTML += "(" + created_p +")";
         });
         $("div[id=player_stats] > div > p:nth-child(8) > span.gold.pull-right").each(function(index, element){
             element.innerHTML += "(" + rejected_p +")";
         });
-        //document.querySelector("body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-collapse.navbar-responsive-collapse.in.collapse > ul > div > div > p:nth-child(4) > span.gold.pull-right").innerHTML += "(" + remaining_p +")";
-        //document.querySelector("body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-collapse.navbar-responsive-collapse.in.collapse > ul > #player_stats > div > p:nth-child(6) > span.gold.pull-right").innerHTML += "(" + created_p +")";
-        //document.querySelector("body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-collapse.navbar-responsive-collapse.in.collapse > ul > #player_stats > div > p:nth-child(8) > span.gold.pull-right").innerHTML += "(" + rejected_p +")";
-
-        //document.querySelector("body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-collapse.navbar-responsive-collapse.in.collapse > div > #player_stats > div > p:nth-child(4) > span.gold.pull-right").innerHTML += "(" + remaining_p +")";
-        //document.querySelector("body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-collapse.navbar-responsive-collapse.in.collapse > div > #player_stats > div > p:nth-child(6) > span.gold.pull-right").innerHTML += "(" + created_p +")";
-        //document.querySelector("body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-collapse.navbar-responsive-collapse.in.collapse > div > #player_stats > div > p:nth-child(8) > span.gold.pull-right").innerHTML += "(" + rejected_p +")";
-
-        //addInfo("已经过了的 po 占所有 po 的比例", "通过率", created_p);
-        //addInfo("已经拒了的 po 占所有 po 的比例", "拒绝率", rejected_p);
-        addInfo("等待结算和dupe、错误的 po", "未结算（未计数）：", remaining + " (" + remaining_p + ")");
+        addInfo(ERROR_TIP, ERROR_TAG, remaining + " (" + remaining_p + ")");
 
         sum = created + rejected;
         if(sum < 100) {
-            addInfo("下一个要获得的成就，仅供参考", "下一个成就：", sum + "/100 (" + (sum / 100).toPercent() + ") " + image_bronze);
+            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, sum + "/100 (" + (sum / 100).toPercent() + ") " + image_bronze);
         } else if(sum < 750) {
-            //addInfo("现在已经获得的成就", "当前成就：", image_bronze);
-            addInfo("下一个要获得的成就，仅供参考", "下一个成就：", image_bronze + "== " + sum + "/750 (" + (sum / 750).toPercent() + ") " + " -->" + image_silver);
+            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_bronze + "== " + sum + "/750 (" + (sum / 750).toPercent() + ") " + " -->" + image_silver);
         } else if(sum < 2500) {
-            //addInfo("现在已经获得的成就", "当前成就：", image_silver);
-            addInfo("下一个要获得的成就，仅供参考", "下一个成就：", image_silver + "== " + sum + "/2500 (" + (sum / 2500).toPercent() + ") " + " -->" + image_gold);
+            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_silver + "== " + sum + "/2500 (" + (sum / 2500).toPercent() + ") " + " -->" + image_gold);
         } else if(sum < 5000) {
-            //addInfo("现在已经获得的成就", "当前成就：", image_gold);
-            addInfo("下一个要获得的成就，仅供参考", "下一个成就：", image_gold + "== " + sum + "/5000 (" + (sum / 5000).toPercent() + ") " + " -->" + image_titanium);
+            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_gold + "== " + sum + "/5000 (" + (sum / 5000).toPercent() + ") " + " -->" + image_titanium);
         } else if(sum < 10000) {
-            //addInfo("现在已经获得的成就", "当前成就：", image_titanium);
-            addInfo("下一个要获得的成就，仅供参考", "下一个成就：", image_titanium + "== " + sum + "/10000 (" + (sum / 10000).toPercent() + ") " + " -->" + image_obsidian);
+            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_titanium + "== " + sum + "/10000 (" + (sum / 10000).toPercent() + ") " + " -->" + image_obsidian);
         } else{
-            addInfo("现在已经获得的成就", "当前成就：", sum + " " + image_obsidian);
+            addInfo(ACHIEVEMENT_TIP, ACHIEVEMENT_TAG, sum + " " + image_obsidian);
         }
     }
     $(main);
 })();
+
