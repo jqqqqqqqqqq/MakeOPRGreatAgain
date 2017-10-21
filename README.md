@@ -82,11 +82,9 @@ Scroll down for English version.
 
 默认20-60秒检查一次。请将页面保留在“当前无 po 可审”，即 opr.ingress.com/recon，否则插件不会启动。
 
-
-
 ------------------
 
-
+# English Version Start Here
 
 # MakeOPRGreatAgain
 
