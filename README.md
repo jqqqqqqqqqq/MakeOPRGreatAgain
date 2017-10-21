@@ -1,8 +1,8 @@
 # Something to mention 写在前面
 
-The author knows nothing about frontend, so push requests are welcome in order to improve code quality!
+The author knows nothing about frontend, so pull requests are welcome in order to improve code quality!
 
-作者不会前端，所以代码质量较低，欢迎前端大神帮忙提升代码质量！整个系列欢迎push request!
+作者不会前端，所以代码质量较低，欢迎前端大神帮忙提升代码质量！整个系列欢迎pull request!
 
 Scroll down for Chinese version.
 
