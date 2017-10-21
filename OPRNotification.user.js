@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         OPR Notification
-// @version      0.6
+// @version      0.7
 // @description  pull latest info every 10 seconds, if recon is available, send a web notification.
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js
 // @author       jqqqqqqqqqq
 // @match        https://opr.ingress.com/recon
+// @match        https://opr.ingress.com/
 // @grant        none
 // ==/UserScript==
 
@@ -15,19 +16,20 @@
 //////////DO NOT EDIT THIS LINE BELOW!
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function rnd(start, end){
+function rnd(start, end){  // chaoed from shizhao
     return Math.floor((Math.random() * (end - start) + start));
 }
 
-
-(function() {
-    Notification.requestPermission();
+function main(){
+    if($($(".alert-danger")[0]).hasClass('ng-hide')){
+        console.warn("OPR Notification idle.");
+        return;
+    }
     var injector = angular.injector(['ng']);
     injector.invoke(function($http){
-        var first_try = true;
         var flip = 0;
         var timeout=rnd(20,60);
-        console.log("OPR Notification running. First update will occur in " + timeout + " seconds.");
+        console.warn("OPR Notification running. First update will occur in " + timeout + " seconds.");
         flip=setTimeout(function timeoutFun(){
             var SUBMISSION_URL = "/api/v1/vault/review";
             var items = {};
@@ -35,24 +37,46 @@ function rnd(start, end){
                 items = response.data;
                 if(items.code == "ERROR"){
                     timeout=rnd(20,60);
-                    console.log("No portal available, retry in " + timeout + " seconds.");
+                    console.warn("No portal available, retry in " + timeout + " seconds.");
                     flip=setTimeout(timeoutFun,timeout*1000);
                 }
-                
                 if(items.code == "OK"){
-                    if(first_try)
-                        return;
-                    Notification.requestPermission( function(status) {
-                        console.log("New portals available！"); // 仅当值为 "granted" 时显示通知
-                        var new_portal = new Notification("New portals available！",{// 显示通知
-                            body: 'Come on! Let\'s continue.',
-                            icon:"/img/great.png"
-                        });
-                        location.href="/"; //有po就去主页
-                    });
+                    sessionStorage.setItem('portalAvailable', true);
+                    location.href="/"; //有po就去主页
+                    console.warn("New portals available！");
                 }
-                first_try = false;
             });
         },timeout*1000);
     });
+}
+
+function waitForLoading(){
+    while(!$($(".ingress-loader")[0]).hasClass("ng-hide")){
+        setTimeout(waitForLoading, 1000);
+        return;
+    }
+    main();
+}
+
+function showNotification(){
+    Notification.requestPermission( function(status) {
+        var new_portal = new Notification("New portals available！",{// 显示通知
+            body: 'Come on! Let\'s continue.',
+            icon:"/img/great.png"
+        });
+    });
+}
+
+(function() {
+    Notification.requestPermission();
+    if(location.href == "https://opr.ingress.com/recon"){
+        waitForLoading();
+    }
+    else{
+        if(sessionStorage.getItem('portalAvailable')){
+            sessionStorage.removeItem('portalAvailable');
+            showNotification();
+        }
+    }
 })();
+
