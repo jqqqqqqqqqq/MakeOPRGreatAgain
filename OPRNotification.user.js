@@ -43,6 +43,14 @@ function localization(){
             OPR_PORTAL_AVAILABLE = "新的 Portal 已经出现！";
             OPR_NOTIFICATION_CONTENT = "怎么能够停止不前！";
             break;
+        case "ja":
+            OPR_NOTIFICATION_IDLE =  "OPR　は今アイドル状態になっています。";
+            OPR_NOTIFICATION_SERVICE_RUNNING =  "OPR が今実行中です。お待ちください。";
+            OPR_FIRST_UPDATE = "OPR 通知が今実行中です。 最初の通知まで %s 秒です。";
+            OPR_UPDATE = "ただいま新しい Portal　候補があるません。次のチェックは %s 秒後です。";
+            OPR_PORTAL_AVAILABLE = "新しい Portal　候補が現れました！";
+            OPR_NOTIFICATION_CONTENT = "止まるもんか！";
+            break;
     }
 }
 
