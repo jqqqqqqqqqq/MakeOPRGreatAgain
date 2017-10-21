@@ -6,6 +6,8 @@ The author knows nothing about frontend, so push requests are welcome in order t
 
 Scroll down for Chinese version.
 
+中文版往下滚。
+
 # English Version
 
 ## MakeOPRGreatAgain
