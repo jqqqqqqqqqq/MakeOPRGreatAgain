@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.25
+// @version      0.26
 // @description  Give five star with single click
 // @updateURL    https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
@@ -51,14 +51,17 @@ function update_button_list(){
         switch($(this).attr("ng-model")) {
             case "answerCtrl.formData.quality":
                 button_list['total'].push($(this));
+                $(this).css({'margin-bottom': '15px'});
                 break;
 
             case "answerCtrl.formData.description":
                 button_list['name'].push($(this));
+                $(this).css({'margin-bottom': '15px'});
                 break;
 
             case "answerCtrl.formData.cultural":
                 button_list['history'].push($(this));
+                $(this).css({'margin-bottom': '15px'});
                 break;
 
             case "answerCtrl.formData.uniqueness":
