@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.27
+// @version      0.28
 // @description  Give five star with single click
 // @updateURL    https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
@@ -112,6 +112,8 @@ function move_portal_rate() {
     for (let j = nodesToMove.length - 1; j >= 0; --j) {
         scorePanel.insertBefore(nodesToMove[j], scorePanel.firstChild);
     }
+    $("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > span:nth-child(1)").css({'font-size': '20px'});
+    $("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > span.glyphicon.glyphicon-info-sign.darkgray").css({'font-size': '20px'});
 }
 (function() {
     if(auto_select) {
