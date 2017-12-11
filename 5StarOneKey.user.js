@@ -2,32 +2,89 @@
 // @name         5 Star One Key
 // @version      0.25
 // @description  Give five star with single click
-// @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js
-// @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js
+// @updateURL    https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
+// @downloadURL  https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
 // @author       jqqqqqqqqqq
 // @match        https://opr.ingress.com/recon
-// @grant        none
+// @require      https://code.jquery.com/jquery-3.2.1.min.js
+// @grant        unsafeWindow
 // ==/UserScript==
 
+var auto_select = true;
+
 var buttons = [
-	{button:"Five Star", total:5, name:5, history:5, unique:5, location:5, safety:5},
-	{button:"553355", total:5, name:5, history:3, unique:3, location:5, safety:5},
-	{button:"533355", total:5, name:3, history:3, unique:3, location:5, safety:5},
+    {button:"Five Star", total:5, name:5, history:5, unique:5, location:5, safety:5},
+    {button:"553355", total:5, name:5, history:3, unique:3, location:5, safety:5},
+    {button:"533355", total:5, name:3, history:3, unique:3, location:5, safety:5},
 ];
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////DO NOT EDIT THIS LINE BELOW!
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const w = typeof unsafeWindow == "undefined" ? window : unsafeWindow;
+
+var first = true;
+function enable_auto_select(){
+    $(".button-star").each(function(){  // use mouse hover to select stars
+        if(first) {
+            console.warn("first ignored");
+            first = false;
+        }
+        else {
+            $(this).hover(function(){$(this).click();});
+        }
+    });
+}
+
+var button_list = {
+    'total': [],
+    'name': [],
+    'history': [],
+    'unique': [],
+    'location': [],
+    'safety': []
+};
+
+function update_button_list(){
+    $(".button-star").each(function(){  // use mouse hover to select stars
+        switch($(this).attr("ng-model")) {
+            case "answerCtrl.formData.quality":
+                button_list['total'].push($(this));
+                break;
+
+            case "answerCtrl.formData.description":
+                button_list['name'].push($(this));
+                break;
+
+            case "answerCtrl.formData.cultural":
+                button_list['history'].push($(this));
+                break;
+
+            case "answerCtrl.formData.uniqueness":
+                button_list['unique'].push($(this));
+                break;
+
+            case "answerCtrl.formData.location":
+                button_list['location'].push($(this));
+                break;
+
+            case "answerCtrl.formData.safety":
+                button_list['safety'].push($(this));
+                break;
+        }
+
+    });
+}
+
 
 function rate_portal(total, name, history, unique, location, safety) {
-    document.querySelector("#AnswersController > form > div:nth-child(1) > div:nth-child(1) > div.btn-group > button:nth-child(" + total + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > div > div:nth-child(5) > button:nth-child(" + name + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > div > div:nth-child(10) > button:nth-child(" + history + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > div > div:nth-child(15) > button:nth-child(" + unique + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(2) > div.col-xs-12.col-sm-6.text-center.col-sm-pull-6 > div:nth-child(6) > button:nth-child(" + location + ")").click();
-    document.querySelector("#AnswersController > form > div:nth-child(2) > div.col-xs-12.col-sm-6.text-center.col-sm-pull-6 > div:nth-child(11) > button:nth-child(" + safety + ")").click();
-
+    button_list['total'][total - 1].click();
+    button_list['name'][name - 1].click();
+    button_list['history'][history - 1].click();
+    button_list['unique'][unique - 1].click();
+    button_list['location'][location - 1].click();
+    button_list['safety'][safety - 1].click();
 }
 
 function add_button() {
@@ -42,7 +99,21 @@ function add_button() {
     });
 }
 
-
+function move_portal_rate() {
+    // move portal rating to the right side
+    const scorePanel = w.document.querySelector("div[class~='pull-right']");
+    let nodesToMove = Array.from(w.document.querySelector("div[class='btn-group']").parentElement.children);
+    nodesToMove = nodesToMove.splice(2, 6);
+    nodesToMove.push(w.document.createElement("br"));
+    for (let j = nodesToMove.length - 1; j >= 0; --j) {
+        scorePanel.insertBefore(nodesToMove[j], scorePanel.firstChild);
+    }
+}
 (function() {
+    if(auto_select) {
+        enable_auto_select();
+    }
     add_button();
+    update_button_list();
+    move_portal_rate();
 })();
