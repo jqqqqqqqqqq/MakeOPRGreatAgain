@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.26
+// @version      0.27
 // @description  Give five star with single click
 // @updateURL    https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
@@ -52,6 +52,7 @@ function update_button_list(){
             case "answerCtrl.formData.quality":
                 button_list['total'].push($(this));
                 $(this).css({'margin-bottom': '15px'});
+                $(this).children('span').css({'font-size': '42px'});
                 break;
 
             case "answerCtrl.formData.description":
