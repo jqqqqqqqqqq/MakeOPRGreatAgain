@@ -51,30 +51,47 @@ function update_button_list(){
         switch($(this).attr("ng-model")) {
             case "answerCtrl.formData.quality":
                 button_list['total'].push($(this));
-                $(this).css({'margin-bottom': '15px'});
+                $(this).css({'margin-bottom': '10px'});
                 $(this).children('span').css({'font-size': '42px'});
+                $(this).css({'margin-left': '5px'});
+                $(this).css({'margin-right': '5px'});
                 break;
 
             case "answerCtrl.formData.description":
                 button_list['name'].push($(this));
-                $(this).css({'margin-bottom': '15px'});
+                $(this).css({'margin-bottom': '10px'});
+                $(this).children('span').css({'font-size': '34px'});
+                $(this).css({'margin-left': '5px'});
+                $(this).css({'margin-right': '5px'});
                 break;
 
             case "answerCtrl.formData.cultural":
                 button_list['history'].push($(this));
-                $(this).css({'margin-bottom': '15px'});
+                $(this).css({'margin-bottom': '10px'});
+                $(this).children('span').css({'font-size': '34px'});
+                $(this).css({'margin-left': '5px'});
+                $(this).css({'margin-right': '5px'});
                 break;
 
             case "answerCtrl.formData.uniqueness":
                 button_list['unique'].push($(this));
+                $(this).children('span').css({'font-size': '34px'});
+                $(this).css({'margin-left': '5px'});
+                $(this).css({'margin-right': '5px'});
                 break;
 
             case "answerCtrl.formData.location":
                 button_list['location'].push($(this));
+                $(this).children('span').css({'font-size': '34px'});
+                $(this).css({'margin-left': '5px'});
+                $(this).css({'margin-right': '5px'});
                 break;
 
             case "answerCtrl.formData.safety":
                 button_list['safety'].push($(this));
+                $(this).children('span').css({'font-size': '34px'});
+                $(this).css({'margin-left': '5px'});
+                $(this).css({'margin-right': '5px'});
                 break;
         }
 
