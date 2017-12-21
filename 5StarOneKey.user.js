@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.28
+// @version      0.29
 // @description  Give five star with single click
 // @updateURL    https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/5StarOneKey/raw/master/5%20Star%20One%20Key.user.js
@@ -113,7 +113,7 @@ function add_button() {
     buttons.forEach(function(button_data) {
         var button = document.createElement("button");
         var textnode = document.createTextNode(button_data["button"]);
-        button.className = "button big-submit-button";
+        button.className = "button submit-button";
         button.appendChild(textnode);
         button_region.appendChild(button);
         button.onclick = function(){rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);};
@@ -131,6 +131,17 @@ function move_portal_rate() {
     }
     $("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > span:nth-child(1)").css({'font-size': '20px'});
     $("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > span.glyphicon.glyphicon-info-sign.darkgray").css({'font-size': '20px'});
+
+    // moving submit button to right side of classification-div
+    const submitDiv = w.document.querySelectorAll("#submitDiv, #submitDiv + .text-center");
+    const classificationRow = w.document.querySelector(".classification-row");
+    const newSubmitDiv = w.document.createElement("div");
+    newSubmitDiv.className = "col-xs-12 col-sm-6";
+    submitDiv[0].style.marginTop = 16;
+    newSubmitDiv.appendChild(submitDiv[0]);
+    newSubmitDiv.appendChild(submitDiv[1]);
+    classificationRow.insertAdjacentElement("afterend", newSubmitDiv);
+    $(".button.big-submit-button")[0].classList.remove("big-submit-button").append("submit-button");
 }
 (function() {
     if(auto_select) {
