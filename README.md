@@ -57,7 +57,7 @@ All the content will appear right below the original info at top right.
 
 ### Installation
 
-Click [Here](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js) to install.
+Click [Here](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js) to install.
 
 ### Usage
 
@@ -129,7 +129,7 @@ This script runs every 20-60 second randomly, please leave your browser at opr.i
 
 ### 安装
 
-点击[这里](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js)安装
+点击[这里](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js)安装
 
 ### 使用
 
