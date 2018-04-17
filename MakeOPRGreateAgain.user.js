@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MakeOPRGreateAgain
-// @version      0.47
+// @version      0.48
 // @description  Make OPR Great Again! Add some fancy displays to your profile based on information already in it.
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
@@ -115,15 +115,15 @@ function addInfo(tooltip, name, value) {
 
         sum = created + rejected;
         if(sum < 100) {
-            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, sum + "/100 (" + (sum / 100).toPercent() + ") " + image_bronze);
+            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, sum + " / 100 (" + (sum / 100).toPercent() + ") " + image_bronze);
         } else if(sum < 750) {
-            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_bronze + "== " + sum + "/750 (" + (sum / 750).toPercent() + ") " + " -->" + image_silver);
+            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_bronze + "== " + sum + " / 750 (" + (sum / 750).toPercent() + ") " + " -->" + image_silver);
         } else if(sum < 2500) {
-            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_silver + "== " + sum + "/2500 (" + (sum / 2500).toPercent() + ") " + " -->" + image_gold);
+            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_silver + "== " + sum + " / 2500 (" + (sum / 2500).toPercent() + ") " + " -->" + image_gold);
         } else if(sum < 5000) {
-            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_gold + "== " + sum + "/5000 (" + (sum / 5000).toPercent() + ") " + " -->" + image_titanium);
+            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_gold + "== " + sum + "/ 5000 (" + (sum / 5000).toPercent() + ") " + " -->" + image_titanium);
         } else if(sum < 10000) {
-            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_titanium + "== " + sum + "/10000 (" + (sum / 10000).toPercent() + ") " + " -->" + image_obsidian);
+            addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, image_titanium + "== " + sum + " / 10000 (" + (sum / 10000).toPercent() + ") " + " -->" + image_obsidian);
         } else{
             addInfo(ACHIEVEMENT_TIP, ACHIEVEMENT_TAG, sum + " " + image_obsidian);
         }
