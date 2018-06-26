@@ -192,11 +192,13 @@ This script runs every 20-60 second randomly, please leave your browser at opr.i
 
 作者不會前端，所以代碼質量較低，歡迎前端大神幫忙提升代碼質量！整個系列歡迎pull request!
 
-| 名稱 | 說明 | 下載 |
-| ----------------------------------------- | ------- --------------- | ---------------------------------- -------------------------- |
+| 名稱                                      | 說明                   | 下載                                                         |
+| ----------------------------------------- | ---------------------- | ------------------------------------------------------------ |
 | [MakeOPRGreatAgain](#makeoprgreatagain-2) | 依據已有數據給出百分比 | [下載](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js) |
-| [5StarOneKey](#5staronekey-2) | 一鍵打分| [電腦版](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js) \| [安卓版](https ://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js) |
-| [OPRNotification](#oprnotification-2) | 審po通知 | [下載](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js) |
+| [5StarOneKey](#5staronekey-2)             | 一鍵打分               | [電腦版](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js) \| [安卓版](https ://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js) |
+| [OPRNotification](#oprnotification-2)     | 審po通知               | [下載](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js) |
+
+
 
 ## MakeOPRGreatAgain
 
