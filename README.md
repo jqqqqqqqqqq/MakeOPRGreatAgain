@@ -1,6 +1,6 @@
 # Language | 语言
 
-[English](#english-version) | [简体中文](#简体中文) | [簡體中文](#簡體中文)
+[English](#english-version) | [简体中文](#简体中文) 
 
 # English Version
 
@@ -183,95 +183,3 @@ This script runs every 20-60 second randomly, please leave your browser at opr.i
 ### 使用
 
 默认20-60秒检查一次。请将页面保留在“当前无 po 可审”，即 opr.ingress.com/recon，否则插件不会启动。
-
-# 簡體中文
-
-這是一份簡體中文版本的說明
-
-# 寫在前面
-
-作者不會前端，所以代碼質量較低，歡迎前端大神幫忙提升代碼質量！整個系列歡迎pull request!
-
-| 名稱                                      | 說明                   | 下載                                                         |
-| ----------------------------------------- | ---------------------- | ------------------------------------------------------------ |
-| [MakeOPRGreatAgain](#makeoprgreatagain-2) | 依據已有數據給出百分比 | [下載](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js) |
-| [5StarOneKey](#5staronekey-2)             | 一鍵打分               | [電腦](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js) \| [智能手機](https://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js) |
-| [OPRNotification](#oprnotification-2)     | 審po通知               | [下載](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js) |
-
-
-
-## MakeOPRGreatAgain
-
-![MakeOPRGreatAgain](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/MakeOPRGreatAgain.png)
-
-### 安裝
-
-本插件適用於 ``Firefox`` 和 ``Chrome`` 瀏覽器,也應該適用於 ``Opera``等支持用戶自定義腳本的瀏覽器,但是並沒有經過深入測試.
-
-#### Chrome
-
-建議安裝[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)插件,插件安裝完成後,點擊[下載](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/ master/MakeOPRGreateAgain.user.js),然後按提示操作即可.
-
-#### Firefox
-安裝[Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)插件.點擊[下載](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain .user.js),然後在出現的會話框中點擊``安裝``
-
-#### 其它瀏覽器
-
-請自行查閱手冊
-
-#### 自動更新
-
-在大多數情況下,本插件安裝完成後都會自動更新,如果沒有,請嘗試以下步驟進行手動更新:
-##### Chrome & Tampermonkey
-
-打開 ``Tampermonkey``的菜單頁面,點擊“檢查用戶腳本更新”,點擊完成後,你的腳本就已全部更新，刷新你的OPR界面,就可以感受到新版
-
-##### Firefox & Greasemonkey
-
-打開``Greasemonkey``菜單頁面,點擊``管理用戶腳本``,在新頁面中點擊右上方的齒輪,點擊“檢查更新”,或者在插件列表中找到你要更新的插件,右鍵點擊並選擇"查找更新"即可.
-
-### 使用
-
-展開右上角即可查看更多信息，所有信息均來源於頁面已有數據。
-
-## 5StarOneKey
-
-![5StarOneKey](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/5StarOneKey.png)
-
-已經更新到自定義打分版本，名字已經出現偏差啦，但是叫著順口懶得改了
-
-### 安裝
-
-點擊[這裡](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js)安裝電腦版本. | 點擊[這裡](https://github.com/Totoro625/MakeOPRGreatAgain/raw/ master/5StarOneKeyForAndroid.user.js)安裝安卓版本.
-
-### 使用
-
-鼠標。
-
-### 不想用默認評分？
-
-很容易。
-
-照著這個寫，別忘了後面的逗號，在源代碼上直接改就行
-
-```
-{button:"553355", total:5, name:3, history:3, unique:3, location:5, safety:5},
-
-// ↑按鈕名稱        ↑總分    ↑名字    ↑歷史     ↑獨一無二   ↑位置       ↑安全
-```
-插入/替換到buttons那個list裡即可
-
-
-## OPRNotification
-
-![OPRNotification1](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/OPRNotification1.jpg)
-
-![OPRNotification1](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/resources/OPRNotification2.jpg)
-
-### 安裝
-
-直接[點此](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js)安裝即可
-
-### 使用
-
-默認20-60秒檢查一次。請將頁面保留在“當前無 po 可審”，即 opr.ingress.com/recon，否則插件不會啟動。
