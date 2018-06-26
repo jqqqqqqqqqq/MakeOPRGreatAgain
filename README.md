@@ -1,6 +1,6 @@
 # Language | 语言
 
-[English](#english-version)| [简体中文](#简体中文) | [簡體中文](#簡體中文)
+[English](#english-version) | [简体中文](#简体中文) | [簡體中文](#簡體中文)
 
 # English Version
 
@@ -64,7 +64,7 @@ All the content will appear right below the original info at top right.
 
 ### Installation
 
-Click [Here](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js) to install for Desktop | Click [Here](https://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js) to install for Android 
+Click [Here](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js) to install for Desktop. | Click [Here](https://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js) to install for Android. 
 
 ### Usage
 
@@ -140,7 +140,7 @@ This script runs every 20-60 second randomly, please leave your browser at opr.i
 
 ### 使用
 
-展开右上角即可查看更多信息，所有信息均来源于页面已有数据。
+展开右上角即可查看更多信息，所有信息均来源于页面已有数据
 
 ## 5StarOneKey
 
@@ -150,7 +150,7 @@ This script runs every 20-60 second randomly, please leave your browser at opr.i
 
 ### 安装
 
-点击[这里](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js)安装电脑版本 | 点击[这里](https://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js)安装安卓版本
+点击[这里](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js)安装电脑版本. | 点击[这里](https://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js)安装安卓版本.
 
 ### 使用
 
@@ -242,7 +242,7 @@ This script runs every 20-60 second randomly, please leave your browser at opr.i
 
 ### 安裝
 
-點擊[這裡](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js)安裝電腦版本| 點擊[這裡](https://github.com/Totoro625/MakeOPRGreatAgain/raw/ master/5StarOneKeyForAndroid.user.js)安裝安卓版本
+點擊[這裡](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js)安裝電腦版本. | 點擊[這裡](https://github.com/Totoro625/MakeOPRGreatAgain/raw/ master/5StarOneKeyForAndroid.user.js)安裝安卓版本.
 
 ### 使用
 
