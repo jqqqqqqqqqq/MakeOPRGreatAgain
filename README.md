@@ -1,14 +1,21 @@
-# Something to mention 写在前面
+# Language | 语言
+
+[English](#english-version) | [简体中文](#简体中文) 
+
+# English Version
+
+This is a English version
+
+# Something to mention 
 
 The author knows nothing about frontend, so pull requests are welcome in order to improve code quality!
 
-作者不会前端，所以代码质量较低，欢迎前端大神帮忙提升代码质量！整个系列欢迎pull request!
+| Name                                      | Instructions           | Download                                                     |
+| ----------------------------------------- | ---------------------- | ------------------------------------------------------------ |
+| [MakeOPRGreatAgain](#makeoprgreatagain) | Marker your OPR score  | [Download](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js) |
+| [5StarOneKey](#5staronekey)             | One key for star       | [Desktop](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js) \| [Android](https://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js) |
+| [OPRNotification](#oprnotification)     | A notification for OPR | [Download](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js) |
 
-Scroll down for Chinese version.
-
-中文版往下滚。
-
-# English Version
 
 ## MakeOPRGreatAgain
 
@@ -57,7 +64,7 @@ All the content will appear right below the original info at top right.
 
 ### Installation
 
-Click [Here](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js) to install.
+Click [Here](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js) to install for Desktop. | Click [Here](https://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js) to install for Android. 
 
 ### Usage
 
@@ -85,7 +92,21 @@ Click [Here](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNoti
 
 This script runs every 20-60 second randomly, please leave your browser at opr.ingress.com/recon, or else the script won't run.
 
-# Chinese Version
+
+
+# 简体中文
+
+这是一份简体中文版本的说明
+
+# 写在前面
+
+作者不会前端，所以代码质量较低，欢迎前端大神帮忙提升代码质量！整个系列欢迎pull request!
+
+| 名称                                      | 说明                   | 下载                                                         |
+| ----------------------------------------- | ---------------------- | ------------------------------------------------------------ |
+| [MakeOPRGreatAgain](#makeoprgreatagain-1) | 依据已有数据给出百分比 | [下载](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js) |
+| [5StarOneKey](#5staronekey-1)             | 一键打分               | [电脑版](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js) \| [安卓版](https://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js) |
+| [OPRNotification](#oprnotification-1)     | 审po通知               | [下载](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/OPRNotification.user.js) |
 
 ## MakeOPRGreatAgain
 
@@ -119,7 +140,7 @@ This script runs every 20-60 second randomly, please leave your browser at opr.i
 
 ### 使用
 
-展开右上角即可查看更多信息，所有信息均来源于页面已有数据。
+展开右上角即可查看更多信息，所有信息均来源于页面已有数据
 
 ## 5StarOneKey
 
@@ -129,7 +150,7 @@ This script runs every 20-60 second randomly, please leave your browser at opr.i
 
 ### 安装
 
-点击[这里](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js)安装
+点击[这里](https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js)安装电脑版本. | 点击[这里](https://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js)安装安卓版本.
 
 ### 使用
 
