@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.31
+// @version      0.32
 // @description  Give five star with single click
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js
@@ -30,6 +30,8 @@ function enable_auto_select(){
     $(".button-star").each(function(){  // use mouse hover to select stars
         if(first) {
             console.warn("first ignored");
+            var answerCtrl = angular.element(document.getElementById('AnswersController')).scope().answerCtrl;
+            $(this).click(function() {answerCtrl.confirmLowQuality(); window.location.assign("/recon");});
             first = false;
         }
         else {
@@ -119,6 +121,13 @@ function add_button() {
         button_region.appendChild(button);
         button.onclick = function(){rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);};
     });
+    w.$scope = element => w.angular.element(element).scope();
+    var submitAndNext = document.createElement("button");
+    submitAndNext.className = "button submit-button";
+    submitAndNext.innerHTML = `<span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;<span class="glyphicon glyphicon-forward"></span>`;
+    submitAndNext.title = "Submit and go to next review";
+    submitAndNext.addEventListener("click", function() {angular.element(document.getElementById('AnswersController')).scope().answerCtrl.submitForm();window.location.assign("/recon");});
+    button_region.insertBefore(submitAndNext, null);
 }
 
 function move_portal_rate() {
@@ -156,4 +165,11 @@ function move_portal_rate() {
     add_button();
     update_button_list();
     move_portal_rate();
+    var answerCtrl = angular.element(document.getElementById('AnswersController')).scope().answerCtrl;
+    answerCtrl.markDuplicate8888 = answerCtrl.markDuplicate;
+    answerCtrl.markDuplicate = function() {
+        answerCtrl.markDuplicate8888.apply( answerCtrl.markDuplicate8888, arguments);
+        answerCtrl.confirmDuplicate();
+        window.location.assign("/recon");
+	};
 })();
