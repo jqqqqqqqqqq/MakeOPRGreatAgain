@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.33
+// @version      0.34
 // @description  Give five star with single click
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js
@@ -32,7 +32,7 @@ function enable_auto_select(){
         if(first) {
             console.warn("first ignored");
             var answerCtrl = angular.element(document.getElementById('AnswersController')).scope().answerCtrl;
-            $(this).click(function() {answerCtrl.confirmLowQuality(); window.location.assign("/recon");});
+            $(this).click(function() {answerCtrl.confirmLowQuality();setTimeout(function(){ window.location.assign("/recon");}, 1000);});
             first = false;
         }
         else {
@@ -139,7 +139,7 @@ function add_button() {
     submitAndNext.className = "button submit-button";
     submitAndNext.innerHTML = `<span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;<span class="glyphicon glyphicon-forward"></span>`;
     submitAndNext.title = "Submit and go to next review";
-    submitAndNext.addEventListener("click", function() {angular.element(document.getElementById('AnswersController')).scope().answerCtrl.submitForm();window.location.assign("/recon");});
+    submitAndNext.addEventListener("click", function() {angular.element(document.getElementById('AnswersController')).scope().answerCtrl.submitForm();setTimeout(function(){ window.location.assign("/recon");}, 1000);});
     button_region.insertBefore(submitAndNext, null);
 }
 
@@ -183,6 +183,6 @@ function move_portal_rate() {
     answerCtrl.markDuplicate = function() {
         answerCtrl.markDuplicate8888.apply( answerCtrl.markDuplicate8888, arguments);
         answerCtrl.confirmDuplicate();
-        window.location.assign("/recon");
+        setTimeout(function(){ window.location.assign("/recon");}, 1000);
 	};
 })();
