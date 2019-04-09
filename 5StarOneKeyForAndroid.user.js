@@ -1,7 +1,7 @@
 // ==UserScript==
 // @id			 5 Star One Key for Android
 // @name         5 Star One Key for Android
-// @version      0.30-modify-0.3
+// @version      0.30-modify-0.34
 // @description  Give five star with single click
 // @updateURL    https://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js
 // @downloadURL  https://github.com/Totoro625/MakeOPRGreatAgain/raw/master/5StarOneKeyForAndroid.user.js
@@ -121,6 +121,13 @@ function add_button() {
         button_region.appendChild(button);
         button.onclick = function(){rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);};
     });
+    w.$scope = element => w.angular.element(element).scope();
+    var submitAndNext = document.createElement("button");
+    submitAndNext.className = "button submit-button";
+    submitAndNext.innerHTML = `<span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;<span class="glyphicon glyphicon-forward"></span>`;
+    submitAndNext.title = "Submit and go to next review";
+    submitAndNext.addEventListener("click", function() {angular.element(document.getElementById('AnswersController')).scope().answerCtrl.submitForm();setTimeout(function(){ window.location.assign("/recon");}, 1000);});
+    button_region.insertBefore(submitAndNext, null);
 }
 
 
