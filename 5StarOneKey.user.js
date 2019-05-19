@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         5 Star One Key
-// @version      0.34
+// @version      0.35
 // @description  Give five star with single click
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/5StarOneKey.user.js
@@ -20,19 +20,29 @@ var buttons = [
     {button:"353344", total:3, name:5, history:3, unique:3, location:4, safety:4},
 ];
 
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////DO NOT EDIT THIS LINE BELOW!
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const w = typeof unsafeWindow == "undefined" ? window : unsafeWindow;
 
+var submit_type = null;
+
 var first = true;
 function enable_auto_select(){
+    if (submit_type == 'EDIT') return;
     $(".button-star").each(function(){  // use mouse hover to select stars
         if(first) {
             console.warn("first ignored");
-            var answerCtrl = angular.element(document.getElementById('AnswersController')).scope().answerCtrl;
-            $(this).click(function() {answerCtrl.confirmLowQuality();setTimeout(function(){ window.location.assign("/recon");}, 1000);});
+            $(this).click(function() {
+                var answerCtrl2 = angular.element($("div[ng-controller='AnswersController as answerCtrl2']")).scope().answerCtrl2;
+                answerCtrl2.confirmLowQuality8888 = answerCtrl2.confirmLowQuality;
+                answerCtrl2.confirmLowQuality = function() {
+                    answerCtrl2.confirmLowQuality8888.apply( answerCtrl2.confirmLowQuality8888, arguments);
+                    setTimeout(function(){ window.location.assign("/recon");}, 1000);
+                };
+            });
             first = false;
         }
         else {
@@ -51,6 +61,7 @@ var button_list = {
 };
 
 function update_button_list(){
+    if (submit_type == 'EDIT') return;
     $(".button-star").each(function(){  // use mouse hover to select stars
         switch($(this).attr("ng-model")) {
             case "answerCtrl.formData.quality":
@@ -126,14 +137,16 @@ function rate_portal(total, name, history, unique, location, safety) {
 
 function add_button() {
     var button_region = document.getElementById("submitDiv");
-    buttons.forEach(function(button_data) {
-        var button = document.createElement("button");
-        var textnode = document.createTextNode(button_data["button"]);
-        button.className = "button submit-button";
-        button.appendChild(textnode);
-        button_region.appendChild(button);
-        button.onclick = function(){rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);};
-    });
+    if (submit_type == 'NEW') {
+        buttons.forEach(function(button_data) {
+            var button = document.createElement("button");
+            var textnode = document.createTextNode(button_data["button"]);
+            button.className = "button submit-button";
+            button.appendChild(textnode);
+            button_region.appendChild(button);
+            button.onclick = function(){rate_portal(button_data["total"], button_data["name"], button_data["history"], button_data["unique"], button_data["location"], button_data["safety"]);};
+        });
+    }
     w.$scope = element => w.angular.element(element).scope();
     var submitAndNext = document.createElement("button");
     submitAndNext.className = "button submit-button";
@@ -144,8 +157,13 @@ function add_button() {
 }
 
 function move_portal_rate() {
+    if (submit_type == 'EDIT') return;
+
     // move portal rating to the right side
-    const scorePanel = w.document.querySelector("div[class~='pull-right']");
+    var scorePanel = w.document.querySelector("div[class='text-center hidden-xs']");
+    if (scorePanel == null) {
+        scorePanel = w.document.querySelector("div[class~='pull-right']");
+    }
     let nodesToMove = Array.from(w.document.querySelector("div[class='btn-group']").parentElement.children);
     nodesToMove = nodesToMove.splice(2, 6);
     nodesToMove.push(w.document.createElement("br"));
@@ -154,6 +172,7 @@ function move_portal_rate() {
     }
     $("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > span:nth-child(1)").css({'font-size': '20px'});
     $("#AnswersController > form > div:nth-child(1) > div.col-xs-12.col-sm-4.pull-right.text-center.hidden-xs > span.glyphicon.glyphicon-info-sign.darkgray").css({'font-size': '20px'});
+
 
     // moving submit button to right side of classification-div
     const submitDiv = w.document.querySelectorAll("#submitDiv, #submitDiv + .text-center");
@@ -171,13 +190,9 @@ function move_portal_rate() {
     submit.style.paddingRight = "10px";
     submit.style.margin = "10px";
 }
-(function() {
-    if(auto_select) {
-        enable_auto_select();
-    }
-    add_button();
-    update_button_list();
-    move_portal_rate();
+
+function skip_confirm() {
+    if (submit_type == 'EDIT') return;
     var answerCtrl = angular.element(document.getElementById('AnswersController')).scope().answerCtrl;
     answerCtrl.markDuplicate8888 = answerCtrl.markDuplicate;
     answerCtrl.markDuplicate = function() {
@@ -185,4 +200,32 @@ function move_portal_rate() {
         answerCtrl.confirmDuplicate();
         setTimeout(function(){ window.location.assign("/recon");}, 1000);
 	};
+}
+
+function get_submit_type() {
+    var subCtrl = angular.element(document.getElementById('NewSubmissionController')).scope().subCtrl;
+    console.log(subCtrl.reviewType);
+    return subCtrl.reviewType;  // NEW or EDIT
+}
+
+function execute_all() {
+    submit_type = get_submit_type();
+    if (submit_type == null) {
+        setTimeout(execute_all, 100);
+        return;
+    }
+    if(auto_select) {
+        enable_auto_select();
+    }
+
+    add_button();
+    update_button_list();
+    move_portal_rate();
+
+    skip_confirm();
+}
+
+(function() {
+    setTimeout(execute_all, 500);
 })();
+
