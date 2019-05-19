@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MakeOPRGreateAgain
-// @version      0.48
+// @version      0.49
 // @description  Make OPR Great Again! Add some fancy displays to your profile based on information already in it.
 // @updateURL    https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
 // @downloadURL  https://github.com/jqqqqqqqqqq/MakeOPRGreatAgain/raw/master/MakeOPRGreateAgain.user.js
@@ -67,23 +67,23 @@ function addInfo(tooltip, name, value) {
     $(span1).mouseover(function(){
         var top = $(span1).position().top - 34;
         var left = $(span1).position().left - 90;
-        $("<div id=\"hover1" + _calltimes + "\" class=\"tooltip ng-isolate-scope top goldBorder fade in\" tooltip-animation-class=\"fade\" uib-tooltip-classes=\"\" ng-class=\"{ in: isOpen() }\" uib-tooltip-popup=\"\" uib-title=\"\" content=\"" + tooltip + "\" placement=\"top\" popup-class=\"goldBorder\" animation=\"animation\" is-open=\"isOpen\" origin-scope=\"origScope\" style=\"top: " + top + "px; left: " + left + "px;\"><div class=\"tooltip-arrow\"></div><div class=\"tooltip-inner ng-binding\" ng-bind=\"content\">" + tooltip + "</div></div>").insertAfter(span1);
-        //$(hover1).addClass('in').removeClass('hide');
+        $("<div id=\"hover1" + _calltimes + "\" class=\"tooltip ng-isolate-scope top goldBorder fade\" tooltip-animation-class=\"fade\" uib-tooltip-classes=\"\" ng-class=\"{ in: isOpen() }\" uib-tooltip-popup=\"\" uib-title=\"\" content=\"" + tooltip + "\" placement=\"top\" popup-class=\"goldBorder\" animation=\"animation\" is-open=\"isOpen\" origin-scope=\"origScope\" style=\"top: " + top + "px; left: " + left + "px;\"><div class=\"tooltip-arrow\"></div><div class=\"tooltip-inner ng-binding\" ng-bind=\"content\">" + tooltip + "</div></div>").insertAfter(span1);
+        setTimeout(function(){$(hover1).addClass('in')}, 1);
     });
     $(span1).mouseout(function(){
-        $(hover1).remove();
+        setTimeout(function(){$(hover1).remove()}, 200);
     });
     var span2 = "#achievement2" + calltimes;
     var hover2 = "#hover2" + calltimes;
     $(span2).mouseover(function(){
         var top = $(span2).position().top - 34;
         var left = $(span2).position().left - 90;
-        $("<div id=\"hover2" + _calltimes + "\" class=\"tooltip ng-isolate-scope top goldBorder fade in\" tooltip-animation-class=\"fade\" uib-tooltip-classes=\"\" ng-class=\"{ in: isOpen() }\" uib-tooltip-popup=\"\" uib-title=\"\" content=\"" + tooltip + "\" placement=\"top\" popup-class=\"goldBorder\" animation=\"animation\" is-open=\"isOpen\" origin-scope=\"origScope\" style=\"top: " + top + "px; left: " + left + "px;\"><div class=\"tooltip-arrow\"></div><div class=\"tooltip-inner ng-binding\" ng-bind=\"content\">" + tooltip + "</div></div>").insertAfter(span2);
-        //$(hover2).addClass('in');
+        $("<div id=\"hover2" + _calltimes + "\" class=\"tooltip ng-isolate-scope top goldBorder fade\" tooltip-animation-class=\"fade\" uib-tooltip-classes=\"\" ng-class=\"{ in: isOpen() }\" uib-tooltip-popup=\"\" uib-title=\"\" content=\"" + tooltip + "\" placement=\"top\" popup-class=\"goldBorder\" animation=\"animation\" is-open=\"isOpen\" origin-scope=\"origScope\" style=\"top: " + top + "px; left: " + left + "px;\"><div class=\"tooltip-arrow\"></div><div class=\"tooltip-inner ng-binding\" ng-bind=\"content\">" + tooltip + "</div></div>").insertAfter(span2);
+        setTimeout(function(){$(hover2).addClass('in')}, 1);
     });
     $(span2).mouseout(function(){
-        //$(hover2).addClass('hide').removeClass('in');
-        $(hover2).remove();
+        $(hover2).removeClass('in');
+        setTimeout(function(){$(hover2).remove()}, 200);
     });
     calltimes++;
 }
@@ -113,7 +113,7 @@ function addInfo(tooltip, name, value) {
         });
         addInfo(ERROR_TIP, ERROR_TAG, remaining + " (" + remaining_p + ")");
 
-        sum = created + rejected;
+        var sum = created + rejected;
         if(sum < 100) {
             addInfo(NEXT_ACHIEVEMENT_TIP, NEXT_ACHIEVEMENT_TAG, sum + " / 100 (" + (sum / 100).toPercent() + ") " + image_bronze);
         } else if(sum < 750) {
@@ -130,4 +130,5 @@ function addInfo(tooltip, name, value) {
     }
     $(main);
 })();
+
 
